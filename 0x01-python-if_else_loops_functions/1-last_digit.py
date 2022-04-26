@@ -6,6 +6,7 @@ if number >= 0:
     number1 = number % 10
 elif number < 0:
     number1 = (number - number - number) % 10
+    number1 = number1 - number1 - number1
 if number1 > 5:
     print(string.format(number, number1, "and is greater then 5"))
 elif number1 == 0:
