@@ -8,11 +8,13 @@
 
 int check_cycle(listint_t *list)
 {
+	listint_t *twoJump;
+	listint_t *singleJump;
+
 	if (list == NULL)
 		return (0);
-
-	listint_t *twoJump = list->next;
-	listint_t *singleJump = list;
+	singleJump = list;
+	twoJump = list->next;
 
 	while (twoJump != NULL && twoJump->next != NULL && singleJump != NULL)
 	{
