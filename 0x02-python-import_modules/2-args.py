@@ -8,3 +8,6 @@ def main():
         print("{} argument:".format(length - 1))
         for i in range(1, length):
             print(i, sys.argv[i])
+
+if __name__ == "__main__":
+    main()
