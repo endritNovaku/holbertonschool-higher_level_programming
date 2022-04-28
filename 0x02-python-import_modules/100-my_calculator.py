@@ -16,10 +16,10 @@ if __name__ == "__main__":
     
     if op2 == "+":
         print(op1, op2, op3, "=", add(op1, op3))
-    elif op2 == "-":
+    if op2 == "-":
         print(op1, op2, op3, "=", sub(op1, op3))
-    elif op2 == "*":
+    if op2 == "*":
         print(op1, op2, op3, "=", mul(op1, op3))
-    elif op2 == "/":
+    if op2 == "/":
         print(op1, op2, op3, "=", div(op1, op3))
 
