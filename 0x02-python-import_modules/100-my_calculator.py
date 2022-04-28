@@ -13,7 +13,7 @@ if __name__ == "__main__":
 
     op1 = int(argv[1])
     op2 = argv[2]
-    op3 = int(argv[3]) 
+    op3 = int(argv[3])
     if op2 == "+":
         print(op1, op2, op3, "=", add(op1, op3))
     if op2 == "-":
