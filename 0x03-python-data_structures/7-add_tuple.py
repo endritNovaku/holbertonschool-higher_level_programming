@@ -3,7 +3,7 @@ def add_tuple(tuple_a=(), tuple_b=()):
     # create an array to add tuples
     tuple_sum = [0, 0, 0, 0]
     # check if the tuple exist and add them to tuple_sum array
-    #if tuple does not exist the element of array will remain 0
+    # if tuple does not exist the element of array will remain 0
     for i in range(2):
         if len(tuple_a) == 2:
             tuple_sum[i] = tuple_a[i]
