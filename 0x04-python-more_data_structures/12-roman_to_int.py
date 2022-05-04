@@ -20,7 +20,7 @@ def roman_to_int(roman_string):
                 new_list.append(v)
 
     for c in range(len(new_list)):
-        if c != len(new_list) -1:
+        if c != len(new_list) - 1:
             if new_list[c] >= new_list[c + 1]:
                 count += new_list[c]
             else:
