@@ -9,7 +9,6 @@
 
 int is_palindrome(listint_t **head)
 {
-	int list_arr[50];
 	int size = 0, idx = 0;
 	int buffer[1024];
 
