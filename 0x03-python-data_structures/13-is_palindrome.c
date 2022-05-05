@@ -1,4 +1,5 @@
 #include "lists.h"
+#include <stddef.h>
 
 /**
  * is_palindrome - check if a list is palindrome
@@ -9,23 +10,27 @@
 int is_palindrome(listint_t **head)
 {
 	int list_arr[50];
-	int i = 0, j = 0;
+	int size = 0, idx = 0;
+	int buffer[1024];
 
-	while(*head != NULL)
+	if (*head == NULL || (*head)->next == NULL)
+		return (1);
+
+	while (*head != NULL)
 	{
-		list_arr[i] = (*head)->n;
-		i++;
+		buffer[size] = (*head)->n;
+		size++;
 		(*head) = (*head)->next;
 	}
 
-	for(j = 0; list_arr[j] != NULL; j++)
+	while (size >= idx)
 	{
-		if list_arr[j] != list_arr[0 - j - 1]
-		{
-			return(0);
-		}
+		if (buffer[idx] != buffer[size - 1])
+			return (0);
+		size--;
+		idx++;
 	}
-	return(1);
+	return (1);
 
 
 }
