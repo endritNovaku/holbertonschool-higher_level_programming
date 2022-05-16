@@ -1,1 +1,1 @@
-# readmer for 0x05-python-exeptions
+# readme for 0x05
