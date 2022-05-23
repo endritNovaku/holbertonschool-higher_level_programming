@@ -3,9 +3,7 @@
 
 
 class Rectangle:
-    """
     number_of_instances = 0
-    """
     """create a functions for ractengle"""
     def __init__(self, width=0, height=0):
         self.height = height
