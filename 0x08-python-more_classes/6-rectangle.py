@@ -64,8 +64,7 @@ class Rectangle:
         """return the rectangle width and height"""
         return f"Rectangle ({self.__width}, {self.__height})"
 
-    @classmethod
     def __del__(cls):
         """delete a rectangle"""
-        cls.number_of_instances -= 1
+        Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
