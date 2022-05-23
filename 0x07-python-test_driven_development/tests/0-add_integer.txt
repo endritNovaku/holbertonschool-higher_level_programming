@@ -1,0 +1,55 @@
+Module 0-add_integer
+
+def add_integer(a, b=98) defines the addition of two integers
+
+	>>> add_integer = __import__('0-add_integer').add_integer
+
+Works with positive integers
+
+	>>> add_integer(3, 5)
+	8
+
+Or negative integers
+
+	>>> add_integer(-3, -3)
+	-6
+	>>> add_integer(100, -3)
+	97
+
+Float numbers will be treated as int
+	
+	>>> add_integer(3.0, 3.0)
+	6
+	>>> add_integer(-1.5, -2.5)
+	-3
+
+If one argument is missing value b will be as default (98)
+
+	>>> add_integer(3)
+	101
+	>>> add_integer(-2)
+	96
+
+If there are more than two arguments an error is raise
+
+	>>> add_integer(1, 2, 3)
+	Traceback (most recent call last):
+	TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
+
+If one of the argument is not an int or float
+
+	>>> add_integer(2, "Hello")
+	Traceback (most recent call last):
+	TypeError: b must be an integer
+
+	>>> add_integer("Hello", 2)
+	Traceback (most recent call last):
+	TypeError: a must be an integer
+
+	>>> add_integer(None)
+	Traceback (most recent call last):
+	TypeError: a must be an integer
+
+	>>> add_integer(hello)
+	Traceback (most recent call last):
+       	NameError: name 'hello' is not defined
