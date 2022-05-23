@@ -1,12 +1,13 @@
 #!/usr/bin/python3
 """create a Rectangle class with widht and height attribute"""
 
+
 class Rectangle:
     """create a functions for ractengle"""
     def __init__(self, width=0, height=0):
         self.height = height
         self.width = width
-    
+
     @property
     def height(self):
         """get height"""
@@ -58,5 +59,5 @@ class Rectangle:
         return "".join(pr)
 
     def __repr__(self):
-        """return the width and height value""" 
+        """return the width and height value"""
         return f"Rectangle({self.__width}, {self.__height})"

@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """create a Rectangle class with widht and height attribute"""
 
+
 class Rectangle:
     number_of_instances = 0
     print_symbol = "#"
@@ -9,7 +10,7 @@ class Rectangle:
         self.height = height
         self.width = width
         type(self).number_of_instances += 1
-    
+
     @property
     def height(self):
         """get height"""
