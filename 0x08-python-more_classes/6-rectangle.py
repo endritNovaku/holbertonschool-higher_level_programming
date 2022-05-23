@@ -3,7 +3,14 @@
 
 
 class Rectangle:
+    """Rectangle class created with width and height
+    Attributes:
+        number_of_instances (int): shows the number of instances created
+        and deleted
+    """
+
     number_of_instances = 0
+
     """create a functions for ractengle"""
     def __init__(self, width=0, height=0):
         self.height = height
