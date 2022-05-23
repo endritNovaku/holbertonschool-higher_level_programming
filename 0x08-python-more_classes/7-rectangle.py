@@ -3,6 +3,13 @@
 
 
 class Rectangle:
+    """Rectangle class created with width and height
+    Attributes:
+        number_of_instances (int): shows the number of instances created
+        and deleted
+
+        print_symbo (str): characters to print
+    """
     number_of_instances = 0
     print_symbol = "#"
     """create a functions for ractengle"""
