@@ -5,12 +5,15 @@ class Rectangle:
         created and deleted
         print_symbol (any type): symbol for string representation
     """
+
     number_of_instances = 0
     print_symbol = "#"
 
     def __init__(self, width=0, height=0):
-        """
-        __init__ - initialize a rectangle class
+        """__init__ - initialize a rectangle class
+        Args:
+            width (int): width of the rectangle
+            height (int): height of the rectangle
         """
         self.width = width
         self.height = height
@@ -64,7 +67,7 @@ class Rectangle:
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
-        """Returns the biggest rectangle"""
+        """Returns the biggest rectangle based on the area"""
 
         if not isinstance(rect_1, Rectangle):
             raise TypeError("rect_1 must be an instance of Rectangle")
@@ -83,7 +86,8 @@ class Rectangle:
         return cls(size, size)
 
     def __str__(self):
-        """Prints the rectangle"""
+        """Prints the rectangle based on the width and height with '#'"""
+
         if self.__width == 0 or self.__height == 0:
             return ""
         rect = ""
@@ -96,9 +100,11 @@ class Rectangle:
 
     def __repr__(self):
         """Representation of the rectangle object"""
+
         return f"Rectangle({self.__width}, {self.__height})"
 
     def __del__(self):
-        """Delete a rectangle"""
+        """Delete an instance of rectangle"""
+
         Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
