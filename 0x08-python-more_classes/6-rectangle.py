@@ -3,12 +3,16 @@
 
 
 class Rectangle:
+    """
     number_of_instances = 0
+    """
     """create a functions for ractengle"""
     def __init__(self, width=0, height=0):
         self.height = height
         self.width = width
+        """
         type(self).number_of_instances += 1
+        """
 
     @property
     def height(self):
@@ -64,8 +68,9 @@ class Rectangle:
         """return the rectangle width and height"""
         return f"Rectangle ({self.__width}, {self.__height})"
 
-    @staticmethod
-    def __del__():
+    def __del__(self):
         """delete a rectangle"""
-        Rectangle.number_of_instances -= 1
+        """
+        type(self).number_of_instances -= 1
+        """
         print("Bye rectangle...")
