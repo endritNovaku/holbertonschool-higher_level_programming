@@ -1,0 +1,51 @@
+Module 1-my_list
+
+def print_sorted(self) prints the lists
+	>>> print_sorted = __import__('1-my_list').print_sorted
+
+Can be initialized with no args
+
+	>>> my_list = MyList()
+	>>> type(my_list)
+	<class '1-my_list.MyList'>
+
+	>>> print(my_list)
+	[]
+
+With elements:
+
+	>>> my_list = MyList([3, 1, 2])
+	>>> print(my_list)
+	[3, 1, 2]
+
+TypeError raised if None is as argument:
+
+	>>> my_list = MyList(None)
+	Traceback (most recent call last):
+	TypeError: 'NoneType' object is not iterable
+
+Inherits methods of class list
+
+	>>> my_list = MyList()
+	>>> my_list.append(1)
+ 	>>> my_list.append(4)
+	>>> my_list.append(2)
+	>>> my_list.remove(2)
+	>>> print(my_list)
+	[1, 4]
+
+	>>> my_list = MyList()
+	>>> my_list.append(1)
+	>>> my_list.append(4)
+	>>> my_list.append(2)
+	>>> my_list.print_sorted()
+	[1, 2, 4]
+
+Also works with strings
+
+	>>> my_list = MyList()
+	>>> my_list.append("ok")
+	>>> my_list.append("hi")
+	>>> my_list.append("hello")
+	>>> my_list.print_sorted()
+	['hello', 'hi', 'ok']
