@@ -5,7 +5,6 @@
 class BaseGeometry:
     """Area function that raise an error"""
 
-
     def area(self)
     """Raise Exception error"""
 
