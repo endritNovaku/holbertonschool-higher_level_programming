@@ -3,11 +3,10 @@
 
 
 class BaseGeometry:
-
     """Base geometry class"""
 
     def area(self):
-        raise Exception("area() is not initialized")
+        raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
         """Validates value
