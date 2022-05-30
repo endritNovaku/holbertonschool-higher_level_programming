@@ -3,7 +3,8 @@
 
 
 class BaseGeometry:
-    """area function"""
+
+    """Base geometry class"""
 
     def area(self):
         raise Exception("area() is not initialized")
