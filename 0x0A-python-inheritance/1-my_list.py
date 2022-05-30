@@ -10,4 +10,5 @@ class MyList(list):
         Args:
             self: MyList
         """
+
         print(sorted(self))
