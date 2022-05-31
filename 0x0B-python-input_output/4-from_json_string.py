@@ -1,8 +1,8 @@
-"""turn from json to string"""
+"""Define json representation function"""
 import json
 
 
 def from_json_string(my_str):
-    """turn from json to string"""
+    """Return an object represented by a JSON string"""
 
     return json.loads(my_str)
