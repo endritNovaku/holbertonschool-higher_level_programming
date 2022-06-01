@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """pascal fun"""
 
+
 def pascal_triangle(n):
     """create a pascal num"""
     newArr = []
@@ -18,6 +19,4 @@ def pascal_triangle(n):
                 num = num / 10
         newArr[i].append(int(num))
         newN = newN * 11
-
-    
     return newArr
