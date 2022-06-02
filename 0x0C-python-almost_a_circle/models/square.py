@@ -27,3 +27,22 @@ class Square(Rectangle):
         """str representation of square"""
 
         return f"[Square] ({self.id}) {self.x}/{self.y} - {self.size}"
+
+    def update(self, *args, **kwargs):
+        """update"""
+
+        if args and len(args) != 0:
+            for a_el in range(len(args)):
+                setattr(self, args_list[a_el], args[a_el])
+        else:
+            for k, v in kwargs.items():
+                if hasattr(self,k):
+                    setattr(self, k, v)
+
+    def to_dictionary(self):
+        """the dictionary representation"""
+
+        return {"id": self.id,
+                "size": self.size,
+                "x": self.x,
+                "y": self.y}
