@@ -61,6 +61,17 @@ class Base:
             file.write(cls.to_json_string(my_list))
 
     @classmethod
+    def create(cls, **dictionary):
+        """create instance"""
+
+        if cls.__name__ == "Rectangle":
+            instance = cls(1, 1)
+        else:
+            instance = cls(1)
+        instance.update(**dictionary)
+        return instance
+
+    @classmethod
     def load_from_file_csv(cls):
         """list of instances"""
 
