@@ -44,7 +44,7 @@ class Base:
         """save to file"""
 
         filename = cls.__name__ + ".json"
-        my_list=[]
+        my_list = []
         if list_objs is not None:
             for el in list_objs:
                 my_list.append(el.to_dictionary())
