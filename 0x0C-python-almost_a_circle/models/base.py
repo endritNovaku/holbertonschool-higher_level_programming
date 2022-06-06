@@ -72,6 +72,19 @@ class Base:
         return instance
 
     @classmethod
+    def load_from_file(cls):
+        f = cls.__name__ + ".json"
+        lis = []
+        if path.exists(f):
+            with open(f, "r", encoding="utf-8")as fi:
+                new_dict = cls.from_json_string(fi.read())
+                for inst in new_dict:
+                    new_list.append(cls.create(**inst))
+                return new_list
+        else:
+            return []
+
+    @classmethod
     def load_from_file_csv(cls):
         """list of instances"""
 
