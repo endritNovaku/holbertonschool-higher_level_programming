@@ -36,7 +36,7 @@ class Square(Rectangle):
                 setattr(self, args_list[a_el], args[a_el])
         else:
             for k, v in kwargs.items():
-                if hasattr(self,k):
+                if hasattr(self, k):
                     setattr(self, k, v)
 
     def to_dictionary(self):
