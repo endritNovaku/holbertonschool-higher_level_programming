@@ -97,3 +97,15 @@ class Base:
                 return csv_list
         else:
             return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """save to csv file"""
+
+        filename = cls.__name__ + ".csv"
+        my_list = []
+        if list_objs is not None:
+            for el in list_objs:
+                my_list.append(el.to_dictionary())
+        with open(filename, "w", encoding="utf-8") as file:
+            file.write(cls.to_json_string(my_list))
