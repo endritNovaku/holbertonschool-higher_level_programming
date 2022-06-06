@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """define base class"""
 import json
+from os import path
 
 
 class Base:
@@ -76,11 +77,11 @@ class Base:
         f = cls.__name__ + ".json"
         lis = []
         if path.exists(f):
-            with open(f, "r", encoding="utf-8")as fi:
+            with open(f, "r", encoding="utf-8") as fi:
                 new_dict = cls.from_json_string(fi.read())
                 for inst in new_dict:
-                    new_list.append(cls.create(**inst))
-                return new_list
+                    lis.append(cls.create(**inst))
+                return lis
         else:
             return []
 
