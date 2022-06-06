@@ -45,11 +45,11 @@ class Base:
 
         filename = cls.__name__ + ".json"
         my_list=[]
-        if list_obj is not None:
-            for el in list_obj:
+        if list_objs is not None:
+            for el in list_objs:
                 my_list.append(el.to_dictionary())
         with open(filename, "w", encoding="utf-8") as file:
-            file.write(cls.to_json(my_list)
+            file.write(cls.to_json_string(my_list))
 
     @classmethod
     def load_from_file_csv(cls):
