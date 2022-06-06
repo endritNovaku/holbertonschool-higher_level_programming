@@ -24,6 +24,16 @@ class Base:
             return "[]"
         return json.dumps(list_dictionaries)
 
+    @staticmethod
+    def from_json_string(json_string):
+        """from json string"""
+
+        if json_string is None or json_string == "":
+            return "[]"
+
+        return json.loads(json_string)
+
+
     @classmethod
     def load_from_file(cls):
         """load from file"""
