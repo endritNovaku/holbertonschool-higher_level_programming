@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """define base class"""
 import json
-from python-input_output.3-to_json_string import to_json_string
 
 
 class Base:
