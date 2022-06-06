@@ -43,13 +43,13 @@ class Base:
     def save_to_file(cls, list_objs):
         """save to file"""
 
-        new_list_csv = []
-        new_csv_file = cls.__name__ + ".csv"
-        if new_list_csv is not None:
-            for el in list_objs:
-                new_list_csv.append(el.to_dictionary())
-        with open(new_csv_file, "w", encoding="utf-8") as file:
-            file.write(cls.to_json_string(new_list_csv))
+        filename = cls.__name__ + ".json"
+        my_list=[]
+        if list_obj is not None:
+            for el in list_obj:
+                my_list.append(el.to_dictionary())
+        with open(filename, "w", encoding="utf-8") as file:
+            file.write(cls.to_json(my_list)
 
     @classmethod
     def load_from_file_csv(cls):
