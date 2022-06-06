@@ -20,21 +20,36 @@ class Base:
     def to_json_string(list_dictionaries):
         """return dictionaries to json string"""
 
-        if list_dictionaries is None:
-            return "[]"
+        if list_dictionaries is None or list_dictionaries is []:
+            return "[]" 
         return json.dumps(list_dictionaries)
+
+    @classmethod
+    def load_from_file(cls):
+        """load from file"""
+
+        my_file = cls.__name__ + ".json"
+        new_list = []
+        if path.exists(my_file):
+            with open(my_file, "r", encoding="utf-8") as f:
+                new_dict = cls.from_json_string(f.read())
+                for inst in new_dict:
+                    new_list.append(cls.create(**inst))
+                return new_list
+        else:
+            return []
 
     @classmethod
     def save_to_file(cls, list_objs):
         """save to file"""
 
-        new_cvs = []
-        new_file = cls.__name__ + ".csv"
-        if new_file is not None:
-            for i in list_objs:
-                new_cvs.append(i.to_dictionary())
-        with open(new_file, "w", encoding="utf-8") as f:
-            f.write(cls.to_json_string(new_list_csv))
+        new_list_csv = []
+        new_csv_file = cls.__name__ + ".csv"
+        if new_list_csv is not None:
+            for el in list_objs:
+                new_list_csv.append(el.to_dictionary())
+        with open(new_csv_file, "w", encoding="utf-8") as file:
+            file.write(cls.to_json_string(new_list_csv))
 
     @classmethod
     def load_from_file_csv(cls):
