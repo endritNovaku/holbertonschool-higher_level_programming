@@ -1,9 +1,9 @@
 #!/usr/bin/node
-function factorial () {
-  let result = 1;
-  for (let i = parseInt(process.argv[2]); i > 0; i--) {
-    result *= i;
+function factorial (num) {
+  if (num <= 1) {
+    return 1;
+  } else {
+    return (num * factorial(num - 1));
   }
-  return result;
 }
-console.log(factorial());
+console.log(factorial(parseInt(process.argv[2])));
