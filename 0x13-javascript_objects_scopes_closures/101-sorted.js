@@ -2,13 +2,13 @@
 const dict = require('./101-data').dict;
 const newDict = {};
 for (const key in dict) {
-  if (!dict.hasOwnProperty(dict[key])) {
+  if (!Object.prototype.hasOwnProperty.call(newDict, dict[key])) {
     newDict[dict[key]] = [];
   }
 }
 
 for (const key in dict) {
-  if (dict.hasOwnProperty.call(dict[key])) {
+  if (Object.prototype.hasOwnProperty.call(newDict, dict[key])) {
     newDict[dict[key]].push(key);
   }
 }
