@@ -1,6 +1,11 @@
 #!/usr/bin/node
+
+let i = 0;
+function increment (n) {
+  n++;
+  return n;
+}
 exports.logMe = function (item) {
-  arguments.callee.myStaticVar = arguments.callee.myStaticVar || 0;
-  console.log(arguments.callee.myStaticVar + ':', item);
-  arguments.callee.myStaticVar++;
+  console.log(i + ':', item);
+  i = increment(i);
 };
