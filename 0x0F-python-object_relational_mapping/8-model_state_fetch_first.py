@@ -15,4 +15,7 @@ if __name__ == "__main__":
     session = Session()
     idNum = session.query(State).first().id
     name = session.query(State).first().name
-    print(f"{idNum}: {name}")
+    if idnum:
+        print(f"{idNum}: {name}")
+    else:
+        print("Nothing")
