@@ -1,8 +1,8 @@
 #!/usr/bin/python3
+"""print states from the hbtn_0e_0_usa"""
 import MySQLdb
 import sys
 
-"""print states from the hbtn_0e_0_usa"""
 
 if __name__ == "__main__":
     db = MySQLdb.connect(
@@ -14,7 +14,7 @@ if __name__ == "__main__":
     state = sys.argv[4]
     query = "SELECT * FROM states WHERE name=%s"
     cur = db.cursor()
-    cur.execute(query, (state, ))
+    cur.execute(query, {'name': sys.argv[4]})
     rows = cur.fetchall()
     for row in rows:
         print(row)
