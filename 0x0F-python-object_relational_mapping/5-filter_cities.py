@@ -16,17 +16,12 @@ if __name__ == "__main__":
     query = " ".join([
         "SELECT cities.name FROM cities",
         "INNER JOIN states",
-        "ON cities.state_id=states.id",
-        "WHERE states.name=%(name)s ORDER BY cities.id"
-        ])
-    cur.execute(query, ("name" = sys.argv[4]))
-    rows = cur.fetchall()
-    city = ""
-    for row in rows:
-        city = city + row[0]
-        city = city + ', '
-    for i in range(len(city) - 2):
-        print(city[i], end='')
-    print()
+        "ON states.id = cities.state_id",
+        "WHERE states.name LIKE BINARY '{}' ORDER BY cities.id"
+        ]).format(sys.argv[4])
+    cur.execute(query)
+    res = cur.fetchall()
+    city = ", ".join([i[0] for i in res])
+    print(city)
     cur.close()
     db.close()
