@@ -1,8 +1,8 @@
 #!/usr/bin/python3
+"""print states from the hbtn_0e_0_usa"""
 import MySQLdb
 import sys
 
-"""print states from the hbtn_0e_0_usa"""
 
 if __name__ == "__main__":
     db = MySQLdb.connect(
