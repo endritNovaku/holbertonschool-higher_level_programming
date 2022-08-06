@@ -12,13 +12,13 @@ if __name__ == "__main__":
             passwd=sys.argv[2],
             db=sys.argv[3],
             charset="utf8")
+    cur = db.cursor()
     query = " ".join([
         "SELECT cities.name FROM cities",
         "INNER JOIN states",
         "ON cities.state_id=states.id",
         "WHERE states.name=%(name)s ORDER BY cities.id"
         ])
-    cur = db.cursor()
     cur.execute(query, ("name" = sys.argv[4]))
     rows = cur.fetchall()
     city = ""
