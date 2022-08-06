@@ -13,7 +13,7 @@ if __name__ == "__main__":
             db=sys.argv[3],
             charset="utf8")
     cur = db.cursor()
-    query = "SELECT * FROM states WHERE name=%s ORDER BY states.id"
+    query = "SELECT * FROM states WHERE name=%(name)s ORDER BY states.id"
     cur.execute(query, {'name': sys.argv[4]})
     rows = cur.fetchall()
     for row in rows:
