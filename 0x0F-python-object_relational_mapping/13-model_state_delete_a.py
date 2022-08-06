@@ -13,7 +13,7 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    for i in session.query(State).filter(State.name.contains('a')).all():
-        session.delete(i)
-        session.commit()
+    session.query(State)\
+           .filter(State.name.contains('a')).delete(synchronize_session='fetch')
+    session.commit()
     session.close()
