@@ -13,9 +13,8 @@ if __name__ == "__main__":
             db=sys.argv[3],
             charset="utf8")
     cur = db.cursor()
-    state = sys.argv[4]
     query = "SELECT * FROM states WHERE name=%s ORDER BY states.id"
-    cur.execute(query, {'name': state})
+    cur.execute(query, {'name': sys.argv[4]})
     rows = cur.fetchall()
     for row in rows:
         print(row)
