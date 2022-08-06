@@ -1,8 +1,8 @@
 #!/usr/bin/python3
+"""print states from the hbtn_0e_0_usa"""
 import MySQLdb
 import sys
 
-"""print states from the hbtn_0e_0_usa"""
 
 if __name__ == "__main__":
     db = MySQLdb.connect(
@@ -11,10 +11,14 @@ if __name__ == "__main__":
             user=sys.argv[1],
             passwd=sys.argv[2],
             db=sys.argv[3])
-    query = "SELECT cities.name FROM cities INNER JOIN states ON cities.state_id=states.id WHERE states.name=%s ORDER BY cities.id"
-    state = sys.argv[4]
+    query = " ".join([
+        "SELECT cities.name FROM cities",
+        "INNER JOIN states",
+        "ON cities.state_id=states.id",
+        "WHERE states.name=%(name)s ORDER BY cities.id"
+        ])
     cur = db.cursor()
-    cur.execute(query, (state, ))
+    cur.execute(query, ("name" = sys.argv[4]))
     rows = cur.fetchall()
     city = ""
     for row in rows:
@@ -23,3 +27,5 @@ if __name__ == "__main__":
     for i in range(len(city) - 2):
         print(city[i], end='')
     print()
+    cur.close()
+    db.close()
