@@ -1,3 +1,3 @@
 #!/bin/bash
-# use curl
-curl -s 0.0.0.0:5000 | wc -c
+# use curl command and display the size
+curl -s "$1" | wc -c
