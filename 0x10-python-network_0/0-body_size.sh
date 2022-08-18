@@ -1,3 +1,3 @@
 #!/bin/bash
-# use curl command and display the size
+# Displays the size of the body response
 curl -s "$1" | wc -c
