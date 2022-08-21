@@ -7,6 +7,6 @@ if __name__ == "__main__":
     url = 'https://api.github.com/repos/{}/{}/commits'.format(argv[1], argv[2])
     res = requests.get(url)
     lastCom = res.json()
-    for i in range(0, 10):
+    for i in range(0, 9):
         print("{} {}".format(lastCom[i]['sha'],
                              lastCom[i]['commit']['author']['name']))
