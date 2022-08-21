@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """status for intranet.hbtn.io/status/"""
 import urllib.request
+import urlib.parse
 import sys
 if __name__ == "__main__":
     url = sys.argv[1]
