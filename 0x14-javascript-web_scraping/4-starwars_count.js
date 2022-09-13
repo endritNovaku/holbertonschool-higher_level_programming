@@ -16,3 +16,6 @@ axios.get(process.argv[2])
     }
     console.log(actorShowen);
   })
+  .catch(error => {
+    console.log(error);
+  });
